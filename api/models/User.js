@@ -11,6 +11,10 @@ module.exports = {
 
   attributes: {
 
+    /**********************\
+         Auth Attributes
+    \**********************/
+
     // First name required for communicating.
     firstName: {
       type: 'string',
@@ -34,6 +38,25 @@ module.exports = {
     password: {
       type: 'string',
       required: true
+    },
+
+    /**********************\
+        Rating Attributes
+    \**********************/
+
+    cleanliness: {
+      type: 'float',
+      defaultsTo: 0
+    },
+
+    friendliness: {
+      type: 'float',
+      defaultsTo: 0
+    },
+
+    rowdiness: {
+      type: 'float',
+      defaultsTo: 0
     },
 
     /**********************\
