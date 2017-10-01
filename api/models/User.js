@@ -5,6 +5,8 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
+const bcrypt = require('bcrypt');
+
 module.exports = {
 
   attributes: {
@@ -30,7 +32,17 @@ module.exports = {
       required: true
     }
 
-  }
+  },
+
+  // Called before a User model is created, will hash the password; returns error if hashing fails.
+  beforeCreate: (values, cb) => {
+      // Hash password
+      bcrypt.hash(values.password, 10, function(err, hash) {
+          if(err) return cb(err);
+          values.password = hash;
+          cb();
+      });
+  },
 
 };
 
