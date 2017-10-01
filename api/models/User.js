@@ -11,27 +11,35 @@ module.exports = {
 
   attributes: {
 
+    // First name required for communicating.
     firstName: {
       type: 'string',
       required: true
     },
 
+    // Last name required for setting up profile with university email.
     lastName: {
       type: 'string',
       required: true
     },
 
+    // Unique email required to verify student.
     email: {
       type: 'string',
       required: true,
       unique: true
     },
 
+    // Password required for authentication.
     password: {
       type: 'string',
       required: true
     },
 
+    /**********************\
+      Matchable Attributes
+    \**********************/
+    
     gender: {
       type: 'string',
       enum: ['Male', 'Female', 'Other'],
@@ -46,6 +54,10 @@ module.exports = {
     yearOfStudy: {
       type: 'interger',
       required: true
+    },
+
+    bio: {
+      type: 'longtext'
     }
 
   },
