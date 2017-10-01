@@ -30,6 +30,22 @@ module.exports = {
     password: {
       type: 'string',
       required: true
+    },
+
+    gender: {
+      type: 'string',
+      enum: ['Male', 'Female', 'Other'],
+      required: true
+    },
+
+    age: {
+      type: 'integer',
+      required: true
+    },
+
+    yearOfStudy: {
+      type: 'interger',
+      required: true
     }
 
   },
